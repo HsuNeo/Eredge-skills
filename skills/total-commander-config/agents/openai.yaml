@@ -1,0 +1,4 @@
+interface:
+  display_name: "Total Commander 菜单与标签"
+  short_description: "维护 TC 菜单、标签与图标，保留个人布局，支持目录迁移及引用检查"
+  default_prompt: "使用 $total-commander-config 维护我的 Total Commander 菜单、标签和图标，先核对现有布局并备份，再完成修改与检查。"
