@@ -1,0 +1,4 @@
+interface:
+  display_name: "短视频素材与工程科普图文"
+  short_description: "按字幕或口播逐句制作横竖PNG、重点动画和人物封面，也支持单张工程科普图文"
+  default_prompt: "使用 $short-video-assets 根据我的字幕或最终口播稿制作完整素材包，交付横屏及9:16 PNG、重点无声MP4和3:4/4:3人物封面；若我只要单张工程科普图文，则按该模式制作。"

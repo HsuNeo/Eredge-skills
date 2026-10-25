@@ -1,0 +1,4 @@
+interface:
+  display_name: "去AI化润色"
+  short_description: "润色中文文章和产品文案，减少空话与模板化表达，保留原有事实、立场和语气"
+  default_prompt: "Use $de-ai-writer to rewrite this article so it sounds natural, human, and ready to publish."

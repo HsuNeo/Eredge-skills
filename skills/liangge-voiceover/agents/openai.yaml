@@ -1,0 +1,6 @@
+interface:
+  display_name: "亮哥口播"
+  short_description: "按亮哥口播风格起草或轻改工程行业文案，保留原观点和自然的出镜表达"
+  default_prompt: "Use $liangge-voiceover to draft a punchy Chinese short-video voiceover with a title, body, intro, and hashtag line."
+policy:
+  allow_implicit_invocation: true
