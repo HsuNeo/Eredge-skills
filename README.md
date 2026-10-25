@@ -1,4 +1,4 @@
-# Codex Skills
+# Eredge Skills
 
 可单独安装的 Codex Skill。每个技能保存在 `skills/<技能名>/` 下，包含说明及其需要的脚本、参考资料。
 
@@ -11,10 +11,16 @@
 在 Codex 中输入：
 
 ```text
-使用 $skill-installer 安装 https://github.com/HsuNeo/codex-skills/tree/main/skills/total-commander-config
+使用 $skill-installer 安装 https://github.com/HsuNeo/Eredge-skills/tree/main/skills/total-commander-config
 ```
 
 也可下载仓库，将 `skills/total-commander-config` 整个文件夹复制到自己的 `~/.codex/skills/`。安装后从下轮对话开始使用。目标目录已有同名 Skill 时，先备份并保留个人修改。
+
+## 版本与适配范围
+
+本 Skill 根据 **Total Commander 11.03 飞扬时空定制版本**的菜单、标签与图标维护工作整理。
+
+其他版本的操作方式类似，但没有逐一进行适配验证。**是否适配当前版本、定制版和实际配置，需要使用者自行测试。** 使用前应备份现有配置，检查脚本通过也不等于真实 TC 界面已经验收。
 
 ## 使用
 
