@@ -1,0 +1,4 @@
+interface:
+  display_name: "易睿捷业务图标"
+  short_description: "为微信小程序页面选用共享业务图标，接入菜单配色并检查实际显示效果"
+  default_prompt: "使用 $eredge-icons 为微信小程序的定额查询菜单选用已有图标，保留菜单文字，并检查它在实际尺寸下是否清楚。"
