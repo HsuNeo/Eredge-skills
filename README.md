@@ -4,10 +4,14 @@
 
 | Skill | 用途 |
 | --- | --- |
-| [total-commander-config](skills/total-commander-config/SKILL.md) | 维护 Windows Total Commander 的菜单、工具栏、标签组和图标，处理目录迁移及失效引用 |
+| [total-commander-config](skills/total-commander-config/SKILL.md) | 维护 Windows Total Commander 的菜单、快捷键、工具栏、标签组和图标，处理目录迁移及失效引用 |
 | [liangge-voiceover](skills/liangge-voiceover/SKILL.md) | 保留“亮哥口播”风格，起草或轻改工程行业短视频文案；含输入输出示例 |
 | [de-ai-writer](skills/de-ai-writer/SKILL.md) | 中文文章润色与去模板化，保留事实、立场及场景语气；含修改前后对照 |
 | [short-video-assets](skills/short-video-assets/SKILL.md) | 根据字幕或口播制作横竖图、动画和封面，也支持单张工程科普图文；含依赖与交付示例 |
+| [exam-paper-generator](skills/exam-paper-generator/SKILL.md) | 根据课程资料编制培训试题、参考答案和解析 |
+| [tender-bid-analysis](skills/tender-bid-analysis/SKILL.md) | 从招标文件提取投标条件、关键期限、资料清单和废标风险 |
+| [generate-training-outline](skills/generate-training-outline/SKILL.md) | 按原格式编排和调整培训大纲，含可指定工作簿的只读检索脚本 |
+| [natural-writer](skills/natural-writer/SKILL.md) | 自行整合改编的中英文写作和润色技能，附上游许可与示例 |
 
 ## 安装
 
@@ -17,7 +21,7 @@
 使用 $skill-installer 安装 https://github.com/HsuNeo/Eredge-skills/tree/main/skills/total-commander-config
 ```
 
-安装其他技能时，将链接末尾改为 `liangge-voiceover`、`de-ai-writer` 或 `short-video-assets`。各技能可独立安装，不要求装全套。
+安装其他技能时，将链接末尾改为上表中的技能名。各技能可独立安装，不要求装全套。
 
 也可下载仓库，将需要的 `skills/<技能名>` 整个文件夹复制到自己的 `~/.codex/skills/`。安装后从下轮对话开始使用。目标目录已有同名 Skill 时，先备份并保留个人修改。
 

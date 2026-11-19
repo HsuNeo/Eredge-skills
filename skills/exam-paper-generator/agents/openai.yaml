@@ -1,0 +1,4 @@
+interface:
+  display_name: "出试卷"
+  short_description: "按课程资料和专业规范生成培训考试试题、答案与详细解析"
+  default_prompt: "Use $exam-paper-generator to generate a training exam from course materials."
