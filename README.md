@@ -12,6 +12,7 @@
 | [tender-bid-analysis](skills/tender-bid-analysis/SKILL.md) | 从招标文件提取投标条件、关键期限、资料清单和废标风险 |
 | [generate-training-outline](skills/generate-training-outline/SKILL.md) | 按原格式编排和调整培训大纲，含可指定工作簿的只读检索脚本 |
 | [natural-writer](skills/natural-writer/SKILL.md) | 自行整合改编的中英文写作和润色技能，附上游许可与示例 |
+| [eredge-icons](skills/eredge-icons/SKILL.md) | 为易睿捷微信小程序的菜单、按钮和底部页签选用共享业务图标，说明补绘和验收方法。使用时需项目已有图标资源或由使用者提供图标包。 |
 
 ## 安装
 
