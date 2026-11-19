@@ -1,0 +1,4 @@
+interface:
+  display_name: "自然写作与去AI味"
+  short_description: "保留事实与作者立场，按用途润色中英文，减少空话、翻译腔和模板化表达"
+  default_prompt: "请用 $natural-writer 润色以下文字，保留事实、限定条件和我的语气，默认只给修改后的正文。"

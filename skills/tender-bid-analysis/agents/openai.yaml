@@ -1,0 +1,4 @@
+interface:
+  display_name: "招标文件投标分析"
+  short_description: "提炼投标要点、必备资料、废标风险与电子标控制"
+  default_prompt: "Use $tender-bid-analysis to analyze this tender document and produce a bid-ready Word brief with mandatory materials and disqualification controls."

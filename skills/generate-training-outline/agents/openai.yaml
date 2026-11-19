@@ -1,0 +1,4 @@
+interface:
+  display_name: "课程大纲与课表调整"
+  short_description: "参考课程库制作Word或Excel课程大纲，按原格式增删内容与调整顺序"
+  default_prompt: "使用 $generate-training-outline，读取课程目录AGENTS和指定材料，按原格式制作或调整Word/Excel课程大纲，保留原件并另存新版本。"
