@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信公众号排版与封面"
+  short_description: "把各类公众号稿件排成可复制的离线网页，按内容选配图片并制作独立横版封面"
+  default_prompt: "使用 $wechat-article-kit，按这篇稿子的内容排版，交付可复制的公众号 HTML 和一张横版封面。"
