@@ -12,6 +12,8 @@
 | [tender-bid-analysis](skills/tender-bid-analysis/SKILL.md) | 从招标文件提取投标条件、关键期限、资料清单和废标风险 |
 | [generate-training-outline](skills/generate-training-outline/SKILL.md) | 按原格式编排和调整培训大纲，含可指定工作簿的只读检索脚本 |
 | [natural-writer](skills/natural-writer/SKILL.md) | 自行整合改编的中英文写作和润色技能，附上游许可与示例 |
+| [wechat-article-kit](skills/wechat-article-kit/SKILL.md) | 制作可离线阅读和复制的公众号 HTML、独立横版封面，支持纯文字和图文 |
+| [construction-animation](skills/construction-animation/SKILL.md) | 用 Blender 制作或接续施工动画，核对分镜、配音语速、字幕与成片交付 |
 
 ## 安装
 
@@ -49,7 +51,11 @@ TC 公开版的 `references/personal-layout.md` 是通用模板，不包含发�
 使用 $liangge-voiceover 轻改这段工程口播，保留原观点，只改不顺口的地方。
 使用 $de-ai-writer 润色这篇产品介绍，保留功能限制，不增加案例与效果承诺。
 使用 $short-video-assets 根据附件 SRT 做素材包，先复用我提供的照片，成品保存到指定主题目录。
+使用 $wechat-article-kit 按这篇定稿制作可复制的公众号 HTML 和横版封面，保存到指定文章目录。
+使用 $construction-animation 接续我提供的 Blender 工程，调整过快配音并核对字幕与时间轴。
 ```
+
+公众号排版和时间轴检查脚本使用 Python；封面脚本还需要 Pillow 和可显示标题的字体，可用 `--font` 指定。施工动画按任务需要使用 Blender、FFmpeg（含 ffprobe）及已配置的配音工具。技能不附带这些软件、工程媒体或声音档案。`natural-writer` 是可选的文字润色技能，不安装也可直接使用公众号排版技能。
 
 口播和润色技能只处理文本，不要求配音、绘图或剪辑工具。短视频素材技能需要当前环境实际提供相应的文件读取、图片生成/编辑或动画导出能力；工具和素材库不随仓库附送，见其 [依赖说明](skills/short-video-assets/references/tools-and-paths.md)。未配置个人素材库也能使用；本机偏好可记录在该技能的 `references/local-preferences.md`，升级时保留个人修改。
 

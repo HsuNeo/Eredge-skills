@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="@@SUMMARY@@">
+<title>@@TITLE@@</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f0eeea;color:#29333e;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
+body[data-layout="report"]{background:#eef3f8}
+body[data-layout="report"] .article-heading{border-color:#d7e4ef}
+body[data-layout="report"] button{border-color:#cad9e8;border-radius:4px}
+body[data-layout="report"] button.primary{background:@@ACCENT@@;border-color:@@ACCENT@@}
+body[data-layout="report"] button:focus-visible{outline-color:#1d6598}
+.tools,.reader{width:min(100%,716px);margin:0 auto}
+.tools{padding:16px 14px 12px}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;font-size:14px;min-height:40px;padding:8px 13px;border:1px solid #c8cdd0;border-radius:7px;background:#fff;color:#273746;cursor:pointer}
+button.primary{background:#304961;border-color:#304961;color:#fff}
+button:focus-visible{outline:3px solid #936541;outline-offset:2px}
+.abstract,.status{font-size:14px;line-height:1.65;margin:9px 0 0}
+.status:empty{display:none}
+.reader{background:#fff;padding:32px 34px;margin-bottom:38px}
+.reader.mobile{width:375px;max-width:100%;padding:25px 17px}
+.article-heading{text-align:center;border-bottom:1px solid #ddd6cd;margin:0 auto 22px;padding:0 0 18px}
+h1{color:@@ACCENT@@;margin:0;font-size:clamp(27px,4.7vw,36px);line-height:1.45;overflow-wrap:anywhere}
+.byline{font-size:14px;color:#596575;margin:10px 0 0}
+.reader.mobile h1{font-size:28px}
+@media(max-width:520px){.reader{padding:25px 17px}.actions{gap:6px}button{padding:8px 10px}}
+@media print{.tools{display:none}.reader{width:100%;padding:0}}
+</style>
+</head>
+<body data-layout="@@LAYOUT@@">
+<header class="tools">
+<nav class="actions" aria-label="公众号编辑工具">
+<button onclick="copyPart('article-title','标题')">复制标题</button>
+<button onclick="copyPart('summary','摘要')">复制摘要</button>
+<button class="primary" onclick="copyPart('wechat-article','正文',true)">复制正文</button>
+<button id="width-button" onclick="toggleWidth()" aria-pressed="false">手机宽度预览</button>
+</nav>
+<p class="abstract"><b>摘要　</b><span id="summary">@@SUMMARY@@</span></p>
+<p class="status" id="feedback" aria-live="polite" role="status"></p>
+</header>
+<main class="reader" id="reader">
+<header class="article-heading"><h1 id="article-title">@@TITLE@@</h1>@@BYLINE@@</header>
+<section id="wechat-article" style="font-family:'Microsoft YaHei','PingFang SC',sans-serif;font-size:17px;line-height:1.95;color:#29333e;overflow-wrap:break-word;text-align:left;">
+@@BODY@@
+</section>
+</main>
+<script>
+async function copyPart(id, label, rich = false) {
+  const content = document.getElementById(id);
+  const feedback = document.getElementById('feedback');
+  const text = rich ? content.innerText : content.textContent;
+  try {
+    if (rich) {
+      await navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([content.outerHTML], {type: 'text/html'}),
+        'text/plain': new Blob([text], {type: 'text/plain'})
+      })]);
+    } else {
+      await navigator.clipboard.writeText(text);
+    }
+  } catch {
+    let field;
+    if (rich) {
+      const range = document.createRange();
+      range.selectNodeContents(content);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    } else {
+      field = document.createElement('textarea');
+      field.value = text;
+      field.readOnly = true;
+      field.setAttribute('aria-label', label);
+      document.querySelector('.tools').appendChild(field);
+      field.focus();
+      field.select();
+    }
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch {}
+    if (field && copied) field.remove();
+    if (!copied) {
+      if (field) field.addEventListener('blur', () => field.remove(), {once: true});
+      feedback.textContent = label + '已选中，请按 Ctrl+C 或使用设备的复制命令。';
+      return;
+    }
+  }
+  feedback.textContent = label + '已复制' + (rich && content.querySelector('img') ? '，粘贴后请核对配图。' : '。');
+}
+function toggleWidth() {
+  const mobile = document.getElementById('reader').classList.toggle('mobile');
+  const button = document.getElementById('width-button');
+  button.textContent = mobile ? '恢复阅读宽度' : '手机宽度预览';
+  button.setAttribute('aria-pressed', String(mobile));
+}
+</script>
+</body>
+</html>

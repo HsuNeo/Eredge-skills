@@ -1,0 +1,4 @@
+interface:
+  display_name: "工程施工动画制作"
+  short_description: "用 Blender 脚本制作施工动画，统一分镜、字幕、配音与成片交付"
+  default_prompt: "用 $construction-animation 接续指定工程，按本次要求制作施工动画并核对成片。"
